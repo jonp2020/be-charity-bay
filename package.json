@@ -1,11 +1,16 @@
 {
   "name": "y",
   "version": "1.0.0",
-  "description": "",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "node server.js",
+    "setup-dbs": "psql -f ./db/setup.sql",
+    "migrate-make": "knex migrate:make",
+    "migrate-latest-dev": "knex migrate:latest",
+    "migrate-rollback-dev": "knex migrate:rollback",
+    "migrate-latest-test": "NODE_ENV=test knex migrate:latest",
+    "migrate-rollback-test": "NODE_ENV=test knex migrate:rollback"
   },
   "repository": {
     "type": "git",
@@ -16,5 +21,11 @@
   "bugs": {
     "url": "https://github.com/jonp2020/be-charity-bay/issues"
   },
-  "homepage": "https://github.com/jonp2020/be-charity-bay#readme"
+  "homepage": "https://github.com/jonp2020/be-charity-bay#readme",
+  "keywords": [],
+  "description": "",
+  "dependencies": {
+    "knex": "^0.21.12",
+    "pg": "^8.4.2"
+  }
 }
