@@ -10,24 +10,17 @@ exports.seed = (knex) => {
       return knex("categories")
         .insert(categories)
         .returning("*")
-        .then((categories) => {
-        //   console.log(categories);
-        });
     })
     .then(() => {
       return knex("charities")
         .insert(charities)
         .returning("*")
-        .then((charities) => {
-          console.log(charities);
-        });
     })
     .then(() => {
       return knex("users")
         .insert(users)
         .returning("*")
         .then((users) => {
-        //   console.log(users);
         });
     })
     .then(() => {
