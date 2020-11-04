@@ -1,0 +1,32 @@
+[
+	{
+		"name": "Age UK",
+		"description": "Age UK is the country's leading charity dedicated to helping everyone make the most of later life.",
+		"location": "UK"
+	},
+	{
+		"name": "Crisis",
+		"description": "Crisis is the national charity for homeless people. They help people directly out of homelessness, and tackle the root causes of homelessness needed to solve it altogether.",
+		"location": "UK"
+	},
+	{
+		"name": "British Red Cross",
+		"description": "British Red Cross  are providing medical supplies, helping those in quarantine and keeping people safe overseas.",
+		"location": "UK"
+	},
+	{
+		"name": "women's aid",
+		"description": "Women’s Aid are providing advice to women experiencing domestic abuse as household-isolation will have a direct Impact. ",
+		"location": "UK"
+	},
+	{
+		"name": "FareShare",
+		"description": "FareShare fights hunger in the UK by redistributing food which would otherwise go to waste to over 11,000 frontline charities nationwide.",
+		"location": "UK"
+	},
+	{
+		"name": "NHS Charities Together",
+		"description": "NHS staff and volunteers are doing amazing work right now in caring for COVID-19 patients. Together, let's show our respect and gratitude as they work tirelessly in the face of the virus.",
+		"location": "UK"
+	}
+]

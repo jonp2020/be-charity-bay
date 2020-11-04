@@ -1,0 +1,26 @@
+[
+  {
+    "slug": "Clothes",
+    "description": "We accept any clothes that have been washed."
+  },
+  {
+    "slug": "Toys",
+    "description": "Tempor laboris cupidatat anim laborum velit. Qui duis duis deserunt voluptate cillum mollit mollit ullamco in irure laboris esse laborum ipsum. Enim duis id enim qui aute consectetur est sint ex fugiat non."
+  },
+  {
+    "slug": "Kitchenware",
+    "description": "Cillum laboris labore cupidatat enim dolore Lorem quis ex. Magna deserunt laborum tempor ullamco adipisicing irure labore nostrud qui nisi esse. Ad elit nostrud aute non aliquip."
+  },
+  {
+    "slug": "Books",
+    "description": "Ipsum eu dolore et mollit Lorem veniam nisi mollit eu ipsum tempor amet cillum eiusmod. Pariatur laborum elit ea quis."
+  },
+  {
+    "slug": "Garden",
+    "description": "Mollit reprehenderit commodo in duis ea commodo reprehenderit laborum cillum exercitation dolor eiusmod. Elit ea eu do elit est aliquip amet id esse do non labore."
+	},
+	{
+    "slug": "Electronics",
+    "description": "Mollit reprehenderit commodo in duis ea commodo reprehenderit laborum cillum exercitation dolor eiusmod. Elit ea eu do elit est aliquip amet id esse do non labore. Dolore ut pariatur laboris in ut enim laboris ut irure mollit laborum excepteur dolore aliqua."
+  }
+]
