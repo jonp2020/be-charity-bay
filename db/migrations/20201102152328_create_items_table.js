@@ -5,10 +5,10 @@ exports.up = function (knex) {
     itemsTable.string('fullsize_img_ref').notNullable();
     itemsTable.string('title').notNullable();
     itemsTable.integer('price').notNullable();
-    itemsTable.integer('seller_id').references('users.user_id').notNullable();
+    itemsTable.string('seller_username').references('users.username').notNullable();
     itemsTable.string('category').references('categories.slug').notNullable();
     itemsTable.string('status').defaultTo('available');
-    itemsTable.string('description').notNullable();
+    itemsTable.text('description').notNullable();
     itemsTable
       .integer('charity_id')
       .references('charities.charity_id')

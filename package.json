@@ -10,7 +10,9 @@
     "migrate-latest-dev": "knex migrate:latest",
     "migrate-rollback-dev": "knex migrate:rollback",
     "migrate-latest-test": "NODE_ENV=test knex migrate:latest",
-    "migrate-rollback-test": "NODE_ENV=test knex migrate:rollback"
+		"migrate-rollback-test": "NODE_ENV=test knex migrate:rollback",
+		"seed": "knex seed:run",    
+		"seed-test": "npm run setup-dbs && NODE_ENV=test npm run seed"
   },
   "repository": {
     "type": "git",
