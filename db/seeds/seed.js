@@ -1,5 +1,4 @@
-const Knex = require("knex");
-const { categories, users, items, charities } = require("../data/index.js");
+const { categories, users, items, charities } = require('../data/index.js');
 exports.seed = (knex) => {
   return knex.migrate
     .rollback()
@@ -7,26 +6,13 @@ exports.seed = (knex) => {
       return knex.migrate.latest();
     })
     .then(() => {
-      return knex("categories")
-        .insert(categories)
-        .returning("*")
+      return Promise.all([
+        knex('categories').insert(categories).returning('*'),
+        knex('charities').insert(charities).returning('*'),
+        knex('users').insert(users).returning('*'),
+      ]);
     })
     .then(() => {
-      return knex("charities")
-        .insert(charities)
-        .returning("*")
-    })
-    .then(() => {
-      return knex("users")
-        .insert(users)
-        .returning("*")
-        .then((users) => {
-        });
-    })
-    .then(() => {
-      return knex("items").insert(items).returning("*");
-    })
-    .catch((err) => {
-      console.log(err);
+      return knex('items').insert(items).returning('*');
     });
 };
