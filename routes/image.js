@@ -1,9 +1,12 @@
 const imageRouter = require('express').Router();
 const { postImage, delImageById } = require('../controllers/image');
-const { withErrorHandling } = require('../errors')
+const { withErrorHandling, handle405Error } = require('../errors');
 
-imageRouter.route('/').post(withErrorHandling(postImage)).all();
-imageRouter.route('/:image_id').delete(withErrorHandling(delImageById)).all();
+imageRouter.route('/').post(withErrorHandling(postImage)).all(handle405Error);
 
+imageRouter
+  .route('/:image_id')
+  .delete(withErrorHandling(delImageById))
+  .all(handle405Error);
 
-module.exports = imageRouter
+module.exports = imageRouter;

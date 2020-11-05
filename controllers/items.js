@@ -7,6 +7,7 @@ const {
 } = require('../models/items');
 
 exports.getItems = async (req, res) => {
+  //add pagination to model
   const {
     query: { status, buyer, category },
   } = req;
@@ -25,19 +26,22 @@ exports.getItemById = async (req, res) => {
     params: { item_id },
   } = req;
   const item = await selectItemById(item_id);
+  res.send({ item });
 };
 
 exports.patchItemById = async (req, res) => {
   const {
-    body: { status },
+    body: { status, buyer },
     params: { item_id },
   } = req;
-  const patchedItem = await updateItemById(status, item_id);
+  const item = await updateItemById(status, buyer, item_id);
+  res.send({ item });
 };
 
 exports.deleteItemById = async (req, res) => {
   const {
     params: { item_id },
   } = req;
-  const deletedItem = await delItemById(item_id);
+  await delItemById(item_id);
+  res.sendStatus(204);
 };

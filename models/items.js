@@ -34,8 +34,46 @@ exports.insertItem = async (itemBody) => {
   return item;
 };
 
-exports.selectItemById = (item_id) => {};
+exports.selectItemById = async (item_id) => {
+  const item = await connection('items')
+    .select('*')
+    .first()
+    .where({ item_id: item_id });
+  if (!item) {
+    return Promise.reject({ status: 404, msg: 'Item Not Found' });
+  }
+  return item;
+};
 
-exports.updateItemById = (status, item_id) => {};
+exports.updateItemById = async (status, buyer, item_id) => {
+  if (status === 'purchased') {
+    const [item] = await connection('items')
+      .where({ item_id: item_id })
+      .update({ status })
+      .returning('*');
+    if (!item) {
+      return Promise.reject({ status: 404, msg: 'Item Not Found' });
+    }
+    return item;
+  }
+  if (status === 'reserved' && typeof buyer === 'string') {
+    const [item] = await connection('items')
+      .where({ item_id: item_id })
+      .update({ status, buyer })
+      .returning('*');
+    if (!item) {
+      return Promise.reject({ status: 404, msg: 'Item Not Found' });
+    }
+    return item;
+  } else {
+    return Promise.reject({ status: 400, msg: 'Bad Request' });
+  }
+};
 
-exports.delItemById = (item_id) => {};
+exports.delItemById = async (item_id) => {
+  const deletedRows = await connection('items')
+    .where({ item_id: item_id })
+    .del();
+  if (deletedRows === 1) return;
+  else return Promise.reject({ status: 404, msg: 'Item Not Found' });
+};

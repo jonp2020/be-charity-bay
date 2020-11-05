@@ -80,6 +80,18 @@ describe('app', () => {
       });
     });
     describe('/image', () => {
+      it('status 405 when invalid method', () => {
+        const invalidMethods = ['get', 'patch', 'put', 'delete'];
+        const methodPromises = invalidMethods.map((method) => {
+          return request(app)
+            [method]('/api/image')
+            .expect(405)
+            .then(({ body: { msg } }) => {
+              expect(msg).toBe('Method not allowed');
+            });
+        });
+        return Promise.all(methodPromises);
+      });
       describe('POST', () => {
         // it('status 201 and object containing image', async () => {
         //   const filePath =
@@ -93,12 +105,38 @@ describe('app', () => {
         //     });
         // });
       });
-      describe('DELETE', () => {
-        // it('', () => {
-        // });
+      describe('/:image_id', () => {
+        it('status 405 when invalid method', () => {
+          const invalidMethods = ['get', 'post', 'patch', 'put'];
+          const methodPromises = invalidMethods.map((method) => {
+            return request(app)
+              [method]('/api/image/2')
+              .expect(405)
+              .then(({ body: { msg } }) => {
+                expect(msg).toBe('Method not allowed');
+              });
+          });
+          return Promise.all(methodPromises);
+        });
+        describe('DELETE', () => {
+          // it('', () => {
+          // });
+        });
       });
     });
     describe('/items', () => {
+      it('status 405 when invalid method', () => {
+        const invalidMethods = ['delete', 'patch', 'put'];
+        const methodPromises = invalidMethods.map((method) => {
+          return request(app)
+            [method]('/api/items')
+            .expect(405)
+            .then(({ body: { msg } }) => {
+              expect(msg).toBe('Method not allowed');
+            });
+        });
+        return Promise.all(methodPromises);
+      });
       describe('GET', () => {
         it('status 200 and object containing array of all items', () => {
           return request(app)
@@ -357,6 +395,173 @@ describe('app', () => {
             .then(({ body: { msg } }) => {
               expect(msg).toBe('Not Found');
             });
+        });
+      });
+      describe('/:item_id', () => {
+        it('status 405 when invalid method', () => {
+          const invalidMethods = ['post', 'put'];
+          const methodPromises = invalidMethods.map((method) => {
+            return request(app)
+              [method]('/api/items/1')
+              .expect(405)
+              .then(({ body: { msg } }) => {
+                expect(msg).toBe('Method not allowed');
+              });
+          });
+          return Promise.all(methodPromises);
+        });
+        describe('GET', () => {
+          it('status 200 and object containing item', () => {
+            return request(app)
+              .get('/api/items/2')
+              .expect(200)
+              .then(({ body: { item } }) => {
+                expect(Object.keys(item)).toEqual(
+                  expect.arrayContaining([
+                    'item_id',
+                    'thumbnail_img_ref',
+                    'fullsize_img_ref',
+                    'title',
+                    'price',
+                    'seller_username',
+                    'category',
+                    'status',
+                    'buyer',
+                    'description',
+                    'charity_id',
+                    'location',
+                  ])
+                );
+              });
+          });
+          it('status 400 when item_id is invalid', () => {
+            return request(app)
+              .get('/api/items/two')
+              .expect(400)
+              .then(({ body: { msg } }) => {
+                expect(msg).toBe('Bad Request');
+              });
+          });
+          it('status 404 when the item_id does not exist', () => {
+            return request(app)
+              .get('/api/items/999')
+              .expect(404)
+              .then(({ body: { msg } }) => {
+                expect(msg).toBe('Item Not Found');
+              });
+          });
+        });
+        describe('PATCH', () => {
+          it('status 200 and object containing patched item', () => {
+            return request(app)
+              .patch('/api/items/1')
+              .send({ status: 'reserved', buyer: 'Juliana Parks' })
+              .expect(200)
+              .then(({ body: { item } }) => {
+                expect(item.status).toBe('reserved');
+                expect(item.buyer).toBe('Juliana Parks');
+                expect(Object.keys(item)).toEqual(
+                  expect.arrayContaining([
+                    'item_id',
+                    'thumbnail_img_ref',
+                    'fullsize_img_ref',
+                    'title',
+                    'price',
+                    'seller_username',
+                    'category',
+                    'status',
+                    'buyer',
+                    'description',
+                    'charity_id',
+                    'location',
+                  ])
+                );
+              });
+          });
+          it('status 200 and object containing patched item when status is changed to purchased but buyer is not updated', () => {
+            return request(app)
+              .patch('/api/items/1')
+              .send({ status: 'purchased' })
+              .expect(200)
+              .then(({ body: { item } }) => {
+                expect(item.status).toBe('purchased');
+              });
+          });
+          it('status 400 when item ID is invalid', () => {
+            return request(app)
+              .patch('/api/items/one')
+              .send({ status: 'reserved', buyer: 'Juliana Parks' })
+              .expect(400)
+              .then(({ body: { msg } }) => {
+                expect(msg).toBe('Bad Request');
+              });
+          });
+          it('status 404 when item ID does not exist', () => {
+            return request(app)
+              .patch('/api/items/999')
+              .send({ status: 'reserved', buyer: 'Juliana Parks' })
+              .expect(404)
+              .then(({ body: { msg } }) => {
+                expect(msg).toBe('Item Not Found');
+              });
+          });
+          it('status 400 when values on body are wrong type', () => {
+            return request(app)
+              .patch('/api/items/1')
+              .send({ status: 1, buyer: 2 })
+              .expect(400)
+              .then(({ body: { msg } }) => {
+                expect(msg).toBe('Bad Request');
+              });
+          });
+          it('status 400 when the status key is missing on the body', () => {
+            return request(app)
+              .patch('/api/items/1')
+              .send({ buyer: 'Juliana Parks' })
+              .expect(400)
+              .then(({ body: { msg } }) => {
+                expect(msg).toBe('Bad Request');
+              });
+          });
+          it('status 400 when the status is set to reserved but there is no buyer on the body', () => {
+            return request(app)
+              .patch('/api/items/1')
+              .send({ status: 'reserved' })
+              .expect(400)
+              .then(({ body: { msg } }) => {
+                expect(msg).toBe('Bad Request');
+              });
+          });
+          it('status 400 when the status is not reserved or purchased', () => {
+            return request(app)
+              .patch('/api/items/1')
+              .send({ status: 'bought', buyer: 'Juliana Parks' })
+              .expect(400)
+              .then(({ body: { msg } }) => {
+                expect(msg).toBe('Bad Request');
+              });
+          });
+        });
+        describe('DELETE', () => {
+          it('status 204', () => {
+            return request(app).delete('/api/items/1').expect(204);
+          });
+          it('status 404 when the item ID does not exist', () => {
+            return request(app)
+              .delete('/api/items/999')
+              .expect(404)
+              .then(({ body: { msg } }) => {
+                expect(msg).toBe('Item Not Found');
+              });
+          });
+          it('status 400 when the item ID is not valid', () => {
+            return request(app)
+              .delete('/api/items/one')
+              .expect(400)
+              .then(({ body: { msg } }) => {
+                expect(msg).toBe('Bad Request');
+              });
+          });
         });
       });
     });
