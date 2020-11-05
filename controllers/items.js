@@ -4,15 +4,21 @@ const {
   updateItemById,
   delItemById,
   insertItem,
-} = require('../models/items');
+} = require("../models/items");
 
 exports.getItems = async (req, res) => {
   //add pagination to model
   const {
-    query: { status, buyer, category },
+    query: { status, buyer, category, p, limit },
   } = req;
-  const items = await selectItems(status, buyer, category);
-  res.send({ items });
+  const { items, itemCount } = await selectItems(
+    status,
+    buyer,
+    category,
+    p,
+    limit
+  );
+  res.send({ items, itemCount });
 };
 
 exports.postItem = async (req, res) => {

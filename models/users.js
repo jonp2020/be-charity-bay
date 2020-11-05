@@ -1,5 +1,7 @@
-const connection = require('../db/connection')
+const connection = require("../db/connection");
 
-exports.insertUser = (body) => {}
-
-exports.selectUserByUsername = (username) => {}
+exports.insertUser = async (body) => {
+  const [user] = await connection("users").insert(body, "*");
+  return user;
+};
+exports.selectUserByUsername = (username) => {};
