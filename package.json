@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "server.js",
   "scripts": {
-    "test": "jest __tests__/server.test.js --detectOpenHandles",
+    "test": "jest __tests__/server.test.js --forceExit",
     "start": "node server.js",
     "setup-dbs": "psql -f ./db/setup.sql",
     "migrate-make": "knex migrate:make",

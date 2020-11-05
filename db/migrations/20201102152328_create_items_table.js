@@ -5,9 +5,13 @@ exports.up = function (knex) {
     itemsTable.string('fullsize_img_ref').notNullable();
     itemsTable.string('title').notNullable();
     itemsTable.integer('price').notNullable();
-    itemsTable.string('seller_username').references('users.username').notNullable();
+    itemsTable
+      .string('seller_username')
+      .references('users.username')
+      .notNullable();
     itemsTable.string('category').references('categories.slug').notNullable();
     itemsTable.string('status').defaultTo('available');
+    itemsTable.string('buyer').defaultTo('');
     itemsTable.text('description').notNullable();
     itemsTable
       .integer('charity_id')

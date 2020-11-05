@@ -24,15 +24,18 @@ const uploadFile = async (buffer, name, type) => {
 
 exports.insertImage = async (req) => {
   const form = new multiparty.Form();
+  console.log(Object.keys(req));
   form.parse(req, async (error, fields, files) => {
+    console.log(error);
     const path = files.file[0].path;
     const buffer = fs.readFileSync(path);
     const type = await fileType.fromBuffer(buffer);
     const fileName = Date.now().toString();
     const data = await uploadFile(buffer, fileName, type);
+    console.log(data);
     return data;
   });
-}
+};
 
 exports.deleteImageById = async (image_id) => {
   return s3.deleteObject(
@@ -44,4 +47,4 @@ exports.deleteImageById = async (image_id) => {
       return data;
     }
   );
-}
+};

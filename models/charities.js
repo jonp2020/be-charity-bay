@@ -1,3 +1,5 @@
-const connection = require('../db/connection')
+const connection = require('../db/connection');
 
-exports.selectCharities = () => {}
+exports.selectCharities = () => {
+  return connection('charities').select('*');
+};

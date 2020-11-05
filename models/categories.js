@@ -1,5 +1,5 @@
-const connection = require('../db/connection')
+const connection = require('../db/connection');
 
-exports.selectCategories = () => {
+exports.selectCategories = async () => {
   return connection('categories').select('*');
-}
+};

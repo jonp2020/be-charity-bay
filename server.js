@@ -1,7 +1,12 @@
 const express = require('express');
 const cors = require('cors');
 const apiRouter = require('./routes/api');
-const { invalidEndpointHandler, send500Error } = require('./errors');
+const {
+  invalidEndpointHandler,
+  send500Error,
+  customErrorHandler,
+  PSQLErrorHandler,
+} = require('./errors');
 
 const app = express();
 
@@ -15,6 +20,8 @@ app.get('/products/:id', function (req, res, next) {
 app.use('/api', apiRouter);
 app.use('/*', invalidEndpointHandler);
 
+app.use(customErrorHandler);
+app.use(PSQLErrorHandler);
 app.use(send500Error);
 
 module.exports = app;
