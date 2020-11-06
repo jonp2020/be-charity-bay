@@ -4,10 +4,9 @@ const {
   updateItemById,
   delItemById,
   insertItem,
-} = require("../models/items");
+} = require('../models/items');
 
 exports.getItems = async (req, res) => {
-  //add pagination to model
   const {
     query: { status, buyer, category, p, limit },
   } = req;
