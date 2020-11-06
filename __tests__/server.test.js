@@ -101,10 +101,7 @@ describe('app', () => {
             .post('/api/image')
             .set({ connection: 'keep-alive' })
             .attach('file', filePath)
-            .expect(201)
-            .then((res) => {
-              // console.log(res.filePath);
-            });
+            .expect(201);
         });
       });
       describe('/:image_id', () => {
