@@ -8,8 +8,8 @@
     "category": "Toys",
     "status": "available",
     "seller_username": "Lois James",
-    "charity_id":1,
-    "location":"stockport"
+    "charity_id": 1,
+    "location": "stockport"
   },
   {
     "thumbnail_img_ref": "Saturn_test_2.jpg",
@@ -19,9 +19,9 @@
     "price": 5,
     "category": "Clothes",
     "status": "available",
-		"seller_username": "Lois James",  
-		"charity_id":1,
-  "location":"stockport" 
+    "seller_username": "Lois James",
+    "charity_id": 1,
+    "location": "stockport"
   },
   {
     "thumbnail_img_ref": "Saturn_test_2.jpg",
@@ -32,8 +32,8 @@
     "category": "Clothes",
     "status": "available",
     "seller_username": "Lois James",
-    "charity_id":1,
-  "location":"stockport"
+    "charity_id": 1,
+    "location": "stockport"
   },
   {
     "thumbnail_img_ref": "Saturn_test_2.jpg",
@@ -43,8 +43,9 @@
     "price": 15,
     "category": "Kitchenware",
     "status": "available",
-    "seller_username": "Lois James",  "charity_id":1,
-  "location":"stockport"
+    "seller_username": "Lois James",
+    "charity_id": 1,
+    "location": "stockport"
   },
   {
     "thumbnail_img_ref": "Saturn_test_2.jpg",
@@ -54,7 +55,9 @@
     "price": 10,
     "category": "Toys",
     "status": "available",
-    "seller_username": "Lois James",  "charity_id":1,"location":"stockport"
+    "seller_username": "Lois James",
+    "charity_id": 1,
+    "location": "stockport"
   },
   {
     "thumbnail_img_ref": "Saturn_test_2.jpg",
@@ -65,8 +68,9 @@
     "category": "Garden",
     "status": "available",
     "seller_username": "Lois James",
-  "charity_id":1,
-  "location":"stockport" },
+    "charity_id": 1,
+    "location": "stockport"
+  },
   {
     "thumbnail_img_ref": "Saturn_test_2.jpg",
     "fullsize_img_ref": "earth-pic.jpg",
@@ -76,8 +80,8 @@
     "category": "Clothes",
     "status": "available",
     "seller_username": "Lois James",
-  "charity_id":1,
-  "location":"stockport"
+    "charity_id": 1,
+    "location": "stockport"
   },
   {
     "thumbnail_img_ref": "Saturn_test_2.jpg",
@@ -87,7 +91,9 @@
     "price": 10,
     "category": "Toys",
     "status": "available",
-    "seller_username": "Lois James",  "charity_id":1,"location":"stockport"
+    "seller_username": "Lois James",
+    "charity_id": 1,
+    "location": "stockport"
   },
   {
     "thumbnail_img_ref": "Saturn_test_2.jpg",
@@ -98,7 +104,8 @@
     "category": "Toys",
     "status": "available",
     "seller_username": "Lois James",
-  "charity_id":1,"location":"stockport"
+    "charity_id": 1,
+    "location": "stockport"
   },
   {
     "thumbnail_img_ref": "Saturn_test_2.jpg",
@@ -109,7 +116,8 @@
     "category": "Books",
     "status": "available",
     "seller_username": "Lois James",
-  "charity_id":1,"location":"stockport"
+    "charity_id": 1,
+    "location": "stockport"
   },
   {
     "thumbnail_img_ref": "Saturn_test_2.jpg",
@@ -119,8 +127,9 @@
     "price": 5,
     "category": "Kitchenware",
     "status": "available",
-    "seller_username": "Lois James",    "charity_id":2,
-    "location":"Leeds"
+    "seller_username": "Lois James",
+    "charity_id": 2,
+    "location": "Leeds"
   },
   {
     "thumbnail_img_ref": "Saturn_test_2.jpg",
@@ -131,8 +140,8 @@
     "category": "Toys",
     "status": "available",
     "seller_username": "Lois James",
-    "charity_id":2,
-    "location":"Leeds"
+    "charity_id": 2,
+    "location": "Leeds"
   },
   {
     "thumbnail_img_ref": "Saturn_test_2.jpg",
@@ -142,8 +151,9 @@
     "price": 20,
     "category": "Garden",
     "status": "available",
-    "seller_username": "Lois James",    "charity_id":2,
-    "location":"Leeds"
+    "seller_username": "Lois James",
+    "charity_id": 2,
+    "location": "Leeds"
   },
   {
     "thumbnail_img_ref": "Saturn_test_2.jpg",
@@ -154,8 +164,8 @@
     "category": "Garden",
     "status": "available",
     "seller_username": "Lois James",
-    "charity_id":2,
-    "location":"Leeds"
+    "charity_id": 2,
+    "location": "Leeds"
   },
   {
     "thumbnail_img_ref": "Saturn_test_2.jpg",
@@ -165,8 +175,9 @@
     "price": 5,
     "category": "Toys",
     "status": "available",
-    "seller_username": "Lois James",    "charity_id":2,
-    "location":"Leeds"
+    "seller_username": "Lois James",
+    "charity_id": 2,
+    "location": "Leeds"
   },
   {
     "thumbnail_img_ref": "Saturn_test_2.jpg",
@@ -177,8 +188,8 @@
     "category": "Clothes",
     "status": "available",
     "seller_username": "Lois James",
-    "charity_id":2,
-    "location":"Leeds"
+    "charity_id": 2,
+    "location": "Leeds"
   },
   {
     "thumbnail_img_ref": "Saturn_test_2.jpg",
@@ -189,8 +200,8 @@
     "category": "Clothes",
     "status": "available",
     "seller_username": "Lois James",
-    "charity_id":2,
-    "location":"Leeds"
+    "charity_id": 2,
+    "location": "Leeds"
   },
   {
     "thumbnail_img_ref": "Saturn_test_2.jpg",
@@ -201,8 +212,8 @@
     "category": "Electronics",
     "status": "available",
     "seller_username": "Lois James",
-    "charity_id":2,
-    "location":"Leeds"
+    "charity_id": 2,
+    "location": "Leeds"
   },
   {
     "thumbnail_img_ref": "Saturn_test_2.jpg",
@@ -212,8 +223,9 @@
     "price": 20,
     "category": "Electronics",
     "status": "available",
-    "seller_username": "Lois James",    "charity_id":2,
-    "location":"Leeds"
+    "seller_username": "Lois James",
+    "charity_id": 2,
+    "location": "Leeds"
   },
   {
     "thumbnail_img_ref": "Saturn_test_2.jpg",
@@ -224,8 +236,8 @@
     "category": "Toys",
     "status": "available",
     "seller_username": "Lois James",
-    "charity_id":3,
-    "location":"Manchester"
+    "charity_id": 3,
+    "location": "Manchester"
   },
   {
     "thumbnail_img_ref": "Saturn_test_2.jpg",
@@ -236,8 +248,8 @@
     "category": "Electronics",
     "status": "available",
     "seller_username": "Lois James",
-    "charity_id":3,
-    "location":"Manchester"
+    "charity_id": 3,
+    "location": "Manchester"
   },
   {
     "thumbnail_img_ref": "Saturn_test_2.jpg",
@@ -248,8 +260,8 @@
     "category": "Electronics",
     "status": "available",
     "seller_username": "Lois James",
-    "charity_id":3,
-    "location":"Manchester"
+    "charity_id": 3,
+    "location": "Manchester"
   },
   {
     "thumbnail_img_ref": "Saturn_test_2.jpg",
@@ -259,8 +271,9 @@
     "price": 8,
     "category": "Clothes",
     "status": "available",
-    "seller_username": "Lois James",    "charity_id":3,
-    "location":"Manchester"
+    "seller_username": "Lois James",
+    "charity_id": 3,
+    "location": "Manchester"
   },
   {
     "thumbnail_img_ref": "Saturn_test_2.jpg",
@@ -270,9 +283,9 @@
     "price": 9,
     "category": "Garden",
     "status": "available",
-		"seller_username": "Lois James",    
-		"charity_id":3,
-    "location":"Manchester"
+    "seller_username": "Lois James",
+    "charity_id": 3,
+    "location": "Manchester"
   },
   {
     "thumbnail_img_ref": "Saturn_test_2.jpg",
@@ -283,8 +296,8 @@
     "category": "Books",
     "status": "available",
     "seller_username": "Lois James",
-    "charity_id":3,
-    "location":"Manchester"
+    "charity_id": 3,
+    "location": "Manchester"
   },
   {
     "thumbnail_img_ref": "Saturn_test_2.jpg",
@@ -294,9 +307,9 @@
     "price": 7,
     "category": "Toys",
     "status": "available",
-		"seller_username": "Lois James",    
-		"charity_id":3,
-    "location":"Manchester"
+    "seller_username": "Lois James",
+    "charity_id": 3,
+    "location": "Manchester"
   },
   {
     "thumbnail_img_ref": "Saturn_test_2.jpg",
@@ -306,9 +319,9 @@
     "price": 15,
     "category": "Electronics",
     "status": "available",
-		"seller_username": "Lois James",    
-		"charity_id":4,
-    "location":"Liverpool"
+    "seller_username": "Lois James",
+    "charity_id": 4,
+    "location": "Liverpool"
   },
   {
     "thumbnail_img_ref": "Saturn_test_2.jpg",
@@ -319,8 +332,8 @@
     "category": "Kitchenware",
     "status": "available",
     "seller_username": "Lois James",
-    "charity_id":4,
-    "location":"Liverpool"
+    "charity_id": 4,
+    "location": "Liverpool"
   },
   {
     "thumbnail_img_ref": "Saturn_test_2.jpg",
@@ -330,9 +343,9 @@
     "price": 16,
     "category": "Clothes",
     "status": "available",
-		"seller_username": "Lois James",    
-		"charity_id":4,
-    "location":"Liverpool"
+    "seller_username": "Lois James",
+    "charity_id": 4,
+    "location": "Liverpool"
   },
   {
     "thumbnail_img_ref": "Saturn_test_2.jpg",
@@ -342,9 +355,9 @@
     "price": 13,
     "category": "Books",
     "status": "available",
-		"seller_username": "Lois James",    
-		"charity_id":4,
-    "location":"Liverpool"
+    "seller_username": "Lois James",
+    "charity_id": 4,
+    "location": "Liverpool"
   },
   {
     "thumbnail_img_ref": "Saturn_test_2.jpg",
@@ -354,9 +367,9 @@
     "price": 3,
     "category": "Toys",
     "status": "available",
-		"seller_username": "Lois James",    
-		"charity_id":4,
-    "location":"Liverpool"
+    "seller_username": "Lois James",
+    "charity_id": 4,
+    "location": "Liverpool"
   },
   {
     "thumbnail_img_ref": "Saturn_test_2.jpg",
@@ -367,8 +380,8 @@
     "category": "Clothes",
     "status": "available",
     "seller_username": "Lois James",
-    "charity_id":4,
-    "location":"Liverpool"
+    "charity_id": 4,
+    "location": "Liverpool"
   },
   {
     "thumbnail_img_ref": "Saturn_test_2.jpg",
@@ -378,9 +391,9 @@
     "price": 10,
     "category": "Garden",
     "status": "available",
-		"seller_username": "Lois James",    
-		"charity_id":4,
-    "location":"Liverpool"
+    "seller_username": "Lois James",
+    "charity_id": 4,
+    "location": "Liverpool"
   },
   {
     "thumbnail_img_ref": "Saturn_test_2.jpg",
@@ -390,9 +403,9 @@
     "price": 8,
     "category": "Kitchenware",
     "status": "available",
-		"seller_username": "Lois James",    
-		"charity_id":4,
-    "location":"Liverpool"
+    "seller_username": "Lois James",
+    "charity_id": 4,
+    "location": "Liverpool"
   },
   {
     "thumbnail_img_ref": "Saturn_test_2.jpg",
@@ -402,9 +415,9 @@
     "price": 7,
     "category": "Toys",
     "status": "available",
-		"seller_username": "Lois James",    
-		"charity_id":5,
-    "location":"London"
+    "seller_username": "Lois James",
+    "charity_id": 5,
+    "location": "London"
   },
   {
     "thumbnail_img_ref": "Saturn_test_2.jpg",
@@ -414,9 +427,9 @@
     "price": 19,
     "category": "Books",
     "status": "available",
-		"seller_username": "Lois James",    
-		"charity_id":5,
-    "location":"London"
+    "seller_username": "Lois James",
+    "charity_id": 5,
+    "location": "London"
   },
   {
     "thumbnail_img_ref": "Saturn_test_2.jpg",
@@ -426,9 +439,9 @@
     "price": 10,
     "category": "Garden",
     "status": "available",
-		"seller_username": "Lois James",    
-		"charity_id":5,
-    "location":"London"
+    "seller_username": "Lois James",
+    "charity_id": 5,
+    "location": "London"
   },
   {
     "thumbnail_img_ref": "Saturn_test_2.jpg",
@@ -438,8 +451,9 @@
     "price": 14,
     "category": "Toys",
     "status": "available",
-    "seller_username": "Lois James",    "charity_id":5,
-    "location":"London"
+    "seller_username": "Lois James",
+    "charity_id": 5,
+    "location": "London"
   },
   {
     "thumbnail_img_ref": "Saturn_test_2.jpg",
@@ -448,9 +462,10 @@
     "description": "Esse culpa pariatur irure dolor sint. Reprehenderit proident cupidatat sunt Lorem. Eiusmod id dolore exercitation excepteur qui nisi deserunt incididunt excepteur reprehenderit proident laboris.",
     "price": 5,
     "category": "Clothes",
-    "status": "available",
-    "seller_username": "Lois James",    "charity_id":5,
-    "location":"London"
+    "status": "L",
+    "seller_username": "Lois James",
+    "charity_id": 5,
+    "location": "London"
   },
   {
     "thumbnail_img_ref": "Saturn_test_2.jpg",
@@ -460,8 +475,9 @@
     "price": 12,
     "category": "Clothes",
     "status": "available",
-    "seller_username": "Lois James",    "charity_id":5,
-    "location":"London"
+    "seller_username": "Lois James",
+    "charity_id": 5,
+    "location": "London"
   },
   {
     "thumbnail_img_ref": "Saturn_test_2.jpg",
@@ -471,8 +487,9 @@
     "price": 5,
     "category": "Kitchenware",
     "status": "available",
-    "seller_username": "Lois James",    "charity_id":5,
-    "location":"London"
+    "seller_username": "Lois James",
+    "charity_id": 5,
+    "location": "London"
   },
   {
     "thumbnail_img_ref": "Saturn_test_2.jpg",
@@ -482,8 +499,9 @@
     "price": 14,
     "category": "Toys",
     "status": "available",
-    "seller_username": "Lois James",    "charity_id":6,
-    "location":"Bristol"
+    "seller_username": "Lois James",
+    "charity_id": 6,
+    "location": "Bristol"
   },
   {
     "thumbnail_img_ref": "Saturn_test_2.jpg",
@@ -493,8 +511,9 @@
     "price": 10,
     "category": "Toys",
     "status": "available",
-    "seller_username": "Lois James",    "charity_id":6,
-    "location":"Bristol"
+    "seller_username": "Lois James",
+    "charity_id": 6,
+    "location": "Bristol"
   },
   {
     "thumbnail_img_ref": "Saturn_test_2.jpg",
@@ -504,8 +523,9 @@
     "price": 10,
     "category": "Clothes",
     "status": "available",
-    "seller_username": "Lois James",    "charity_id":6,
-    "location":"Bristol"
+    "seller_username": "Lois James",
+    "charity_id": 6,
+    "location": "Bristol"
   },
   {
     "thumbnail_img_ref": "Saturn_test_2.jpg",
@@ -515,8 +535,9 @@
     "price": 3,
     "category": "Books",
     "status": "available",
-    "seller_username": "Lois James",    "charity_id":6,
-    "location":"Bristol"
+    "seller_username": "Lois James",
+    "charity_id": 6,
+    "location": "Bristol"
   },
   {
     "thumbnail_img_ref": "Saturn_test_2.jpg",
@@ -526,8 +547,9 @@
     "price": 12,
     "category": "Kitchenware",
     "status": "available",
-    "seller_username": "Lois James",    "charity_id":6,
-    "location":"Bristol"
+    "seller_username": "Lois James",
+    "charity_id": 6,
+    "location": "Bristol"
   },
   {
     "thumbnail_img_ref": "Saturn_test_2.jpg",
@@ -537,8 +559,9 @@
     "price": 5,
     "category": "Garden",
     "status": "available",
-    "seller_username": "Lois James",    "charity_id":6,
-    "location":"Bristol"
+    "seller_username": "Lois James",
+    "charity_id": 6,
+    "location": "Bristol"
   },
   {
     "thumbnail_img_ref": "Saturn_test_2.jpg",
@@ -548,8 +571,9 @@
     "price": 10,
     "category": "Clothes",
     "status": "available",
-    "seller_username": "Lois James",    "charity_id":6,
-    "location":"Bristol"
+    "seller_username": "Lois James",
+    "charity_id": 6,
+    "location": "Bristol"
   },
   {
     "thumbnail_img_ref": "Saturn_test_2.jpg",
@@ -559,8 +583,9 @@
     "price": 5,
     "category": "Toys",
     "status": "available",
-    "seller_username": "Lois James",    "charity_id":4,
-    "location":"Bristol"
+    "seller_username": "Lois James",
+    "charity_id": 4,
+    "location": "Bristol"
   },
   {
     "thumbnail_img_ref": "Saturn_test_2.jpg",
@@ -569,8 +594,10 @@
     "description": "Ad eiusmod non eiusmod aute nulla et laboris magna occaecat fugiat pariatur nostrud. Voluptate pariatur laboris est cillum irure eiusmod laboris commodo labore voluptate. Veniam cillum enim magna exercitation do quis qui sint irure exercitation sint ipsum. ",
     "price": 5,
     "category": "Clothes",
-    "status": "available",
-    "seller_username": "Lois James",    "charity_id":5,
-    "location":"Bristol"
+    "status": "reserved",
+    "buyer": "Juliana Parks",
+    "seller_username": "Lois James",
+    "charity_id": 5,
+    "location": "Bristol"
   }
 ]

@@ -3,16 +3,16 @@
   "version": "1.0.0",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js",
+    "test": "jest __tests__/server.test.js --forceExit",
+    "start": "node listen.js",
     "setup-dbs": "psql -f ./db/setup.sql",
     "migrate-make": "knex migrate:make",
     "migrate-latest-dev": "knex migrate:latest",
     "migrate-rollback-dev": "knex migrate:rollback",
     "migrate-latest-test": "NODE_ENV=test knex migrate:latest",
-		"migrate-rollback-test": "NODE_ENV=test knex migrate:rollback",
-		"seed": "knex seed:run",    
-		"seed-test": "npm run setup-dbs && NODE_ENV=test npm run seed"
+    "migrate-rollback-test": "NODE_ENV=test knex migrate:rollback",
+    "seed": "knex seed:run",
+    "seed-test": "npm run setup-dbs && NODE_ENV=test npm run seed"
   },
   "repository": {
     "type": "git",
@@ -27,7 +27,17 @@
   "keywords": [],
   "description": "",
   "dependencies": {
+    "aws-sdk": "^2.784.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "file-type": "^16.0.1",
     "knex": "^0.21.12",
+    "multiparty": "^4.2.2",
     "pg": "^8.4.2"
+  },
+  "devDependencies": {
+    "jest": "^26.6.3",
+    "supertest": "^6.0.0"
   }
 }
