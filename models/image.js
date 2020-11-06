@@ -29,9 +29,6 @@ exports.insertImage = (req) => {
     const buffer = fs.readFileSync(path);
     const type = await fileType.fromBuffer(buffer);
     const fileName = Date.now().toString();
-    // console.log(buffer);
-    // console.log(fileName);
-    // console.log(type);
     const data = await uploadFile(buffer, fileName, type);
     return data;
   });

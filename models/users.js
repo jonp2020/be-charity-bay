@@ -10,7 +10,7 @@ exports.selectUserByUsername = async (username) => {
     .first()
     .where({ username });
   if (!user) {
-    return Promise.reject({ status: 404, msg: 'User Not Found' });
+    return [];
   }
   return user;
 };

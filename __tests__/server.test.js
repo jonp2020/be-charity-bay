@@ -118,7 +118,7 @@ describe('app', () => {
           return Promise.all(methodPromises);
         });
         describe('DELETE', () => {
-          it.only('status 204', () => {
+          it('status 204', () => {
             return request(app)
               .delete('/api/image/1604593310193.jpg')
               .expect(204);
@@ -728,12 +728,12 @@ describe('app', () => {
                 expect(user.username).toBe('Lois James');
               });
           });
-          it('status 404 when username does not exist', () => {
+          it('status 200 and object containing empty array when username does not exist', () => {
             return request(app)
               .get('/api/users/Peter Griffin')
-              .expect(404)
-              .then(({ body: { msg } }) => {
-                expect(msg).toBe('User Not Found');
+              .expect(200)
+              .then(({ body: { user } }) => {
+                expect(user).toEqual([]);
               });
           });
         });
