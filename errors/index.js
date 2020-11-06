@@ -24,10 +24,13 @@ exports.customErrorHandler = (err, req, res, next) => {
 exports.PSQLErrorHandler = (err, req, res, next) => {
   const errorCodes = ['23502', '42703', '22P02'];
   const notFound = ['23503'];
+  const alreadyExists = ['23505'];
   if (errorCodes.includes(err.code)) {
     res.status(400).send({ msg: 'Bad Request' });
   } else if (notFound.includes(err.code)) {
     res.status(404).send({ msg: 'Not Found' });
+  } else if (alreadyExists.includes(err.code)) {
+    res.status(400).send({ msg: 'Username already exists' });
   } else {
     next(err);
   }
