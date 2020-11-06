@@ -690,6 +690,21 @@ describe('app', () => {
               expect(msg).toBe('Bad Request');
             });
         });
+        it('status 400 when username already exists', () => {
+          return request(app)
+            .post('/api/users')
+            .send({
+              username: 'Lois James',
+              email: 'loisjames@housedown.com',
+              first_name: 'Lois',
+              last_name: 'James',
+              location: 'Leeds',
+            })
+            .expect(400)
+            .then(({ body: { msg } }) => {
+              expect(msg).toBe('Username already exists');
+            });
+        });
       });
       describe('/:username', () => {
         it('returns status 405 when invalid method', () => {
