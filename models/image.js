@@ -22,15 +22,19 @@ const uploadFile = async (buffer, name, type) => {
   return s3.upload(params).promise();
 };
 
-exports.insertImage = (req) => {
+exports.insertImage = async (req, cb) => {
   const form = new multiparty.Form();
   form.parse(req, async (error, fields, files) => {
-    const path = files.file[0].path;
-    const buffer = fs.readFileSync(path);
-    const type = await fileType.fromBuffer(buffer);
-    const fileName = Date.now().toString();
-    const data = await uploadFile(buffer, fileName, type);
-    return data;
+    try {
+      const path = files.file[0].path;
+      const buffer = fs.readFileSync(path);
+      const type = await fileType.fromBuffer(buffer);
+      const fileName = Date.now().toString();
+      const data = await uploadFile(buffer, fileName, type);
+      cb(data);
+    } catch {
+      console.log(error);
+    }
   });
 };
 
