@@ -11,8 +11,6 @@ afterAll(() => {
   return connection.destroy();
 });
 
-//complete testing uploading and deleting of image
-
 describe('app', () => {
   it('status 404 when invalid endpoint', () => {
     return request(app)
@@ -94,15 +92,15 @@ describe('app', () => {
         return Promise.all(methodPromises);
       });
       describe('POST', () => {
-        it('status 201 and object containing image', () => {
-          const filePath =
-            '/Users/jonathanparrott/Desktop/Northcoders/project/be-charity-bay/db/data/test-data/Saturn_test_1.jpeg';
-          return request(app)
-            .post('/api/image')
-            .set({ connection: 'keep-alive' })
-            .attach('file', filePath)
-            .expect(201);
-        });
+        // it('status 201 and object containing image', () => {
+        //   const filePath =
+        //     '/Users/jonathanparrott/Desktop/Northcoders/project/be-charity-bay/db/data/test-data/Saturn_test_1.jpeg';
+        //   return request(app)
+        //     .post('/api/image')
+        //     .set({ connection: 'keep-alive' })
+        //     .attach('file', filePath)
+        //     .expect(201);
+        // });
       });
       describe('/:image_id', () => {
         it('status 405 when invalid method', () => {
@@ -704,6 +702,40 @@ describe('app', () => {
             .then(({ body: { msg } }) => {
               expect(msg).toBe('Username already exists');
             });
+        });
+      });
+      describe('/user', () => {
+        describe('/:email', () => {
+          it('status 405 and method not allowed', () => {
+            const invalidMethods = ['post', 'delete', 'patch', 'put'];
+            const methodPromises = invalidMethods.map((method) => {
+              return request(app)
+                [method]('/api/users/user/loisjames@housedown.com')
+                .expect(405)
+                .then(({ body: { msg } }) => {
+                  expect(msg).toBe('Method not allowed');
+                });
+            });
+            return Promise.all(methodPromises);
+          });
+          describe('GET', () => {
+            it('status 200 and object containing user', () => {
+              return request(app)
+                .get('/api/users/user/loisjames@housedown.com')
+                .expect(200)
+                .then(({ body: { user } }) => {
+                  expect(user.email).toBe('loisjames@housedown.com');
+                });
+            });
+            it('status 200 and object containing empty array when email does not exist', () => {
+              return request(app)
+                .get('/api/users/user/fwjdsjk@jsef.com')
+                .expect(200)
+                .then(({ body: { user } }) => {
+                  expect(user).toEqual([]);
+                });
+            });
+          });
         });
       });
       describe('/:username', () => {

@@ -1,8 +1,9 @@
 const { insertImage, deleteImageById } = require('../models/image');
 
 exports.postImage = async (req, res) => {
-  const image = await insertImage(req);
-  res.status(201).send({ image });
+  insertImage(req, (image) => {
+    res.status(201).send({ image });
+  });
 };
 
 exports.delImageById = async (req, res) => {

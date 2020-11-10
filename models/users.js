@@ -14,3 +14,11 @@ exports.selectUserByUsername = async (username) => {
   }
   return user;
 };
+
+exports.selectUserByEmail = async (email) => {
+  const user = await connection('users').select('*').first().where({ email });
+  if (!user) {
+    return [];
+  }
+  return user;
+};
