@@ -10,7 +10,15 @@ exports.selectUserByUsername = async (username) => {
     .first()
     .where({ username });
   if (!user) {
-    return Promise.reject({ status: 404, msg: 'User Not Found' });
+    return [];
+  }
+  return user;
+};
+
+exports.selectUserByEmail = async (email) => {
+  const user = await connection('users').select('*').first().where({ email });
+  if (!user) {
+    return [];
   }
   return user;
 };

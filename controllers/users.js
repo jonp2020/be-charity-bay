@@ -1,4 +1,8 @@
-const { insertUser, selectUserByUsername } = require('../models/users');
+const {
+  insertUser,
+  selectUserByUsername,
+  selectUserByEmail,
+} = require('../models/users');
 
 exports.postUser = async (req, res) => {
   const { body } = req;
@@ -11,5 +15,13 @@ exports.getUserByUsername = async (req, res) => {
     params: { username },
   } = req;
   const user = await selectUserByUsername(username);
+  res.send({ user });
+};
+
+exports.getUserByEmail = async (req, res) => {
+  const {
+    params: { email },
+  } = req;
+  const user = await selectUserByEmail(email);
   res.send({ user });
 };
