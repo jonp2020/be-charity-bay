@@ -1,7 +1,14 @@
 const connection = require('../db/connection');
 const { checkExists } = require('./utils');
 
-exports.selectItems = async (status, buyer, category, p = 1, limit = 10) => {
+exports.selectItems = async (
+  status,
+  buyer,
+  seller_username,
+  category,
+  p = 1,
+  limit = 10
+) => {
   if (p != Number(p) || limit != Number(limit)) {
     return Promise.reject({ status: 400, msg: 'Bad Request' });
   }
@@ -15,6 +22,7 @@ exports.selectItems = async (status, buyer, category, p = 1, limit = 10) => {
       if (status) query.where('status', status);
       if (category) query.where('category', category);
       if (buyer) query.where('buyer', buyer);
+      if (seller_username) query.where('seller_username', seller_username);
     });
   const itemCount = await connection('items')
     .select('*')
@@ -22,12 +30,14 @@ exports.selectItems = async (status, buyer, category, p = 1, limit = 10) => {
       if (status) query.where('status', status);
       if (category) query.where('category', category);
       if (buyer) query.where('buyer', buyer);
+      if (seller_username) query.where('seller_username', seller_username);
     });
 
   if (!items.length) {
     await Promise.all([
       checkExists('categories', 'slug', category),
       checkExists('users', 'username', buyer),
+      checkExists('users', 'username', seller_username),
     ]);
   }
   if (status) {

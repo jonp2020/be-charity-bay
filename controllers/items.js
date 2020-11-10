@@ -8,11 +8,12 @@ const {
 
 exports.getItems = async (req, res) => {
   const {
-    query: { status, buyer, category, p, limit },
+    query: { status, buyer, seller_username, category, p, limit },
   } = req;
   const { items, itemCount } = await selectItems(
     status,
     buyer,
+    seller_username,
     category,
     p,
     limit

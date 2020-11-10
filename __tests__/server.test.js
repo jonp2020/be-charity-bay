@@ -199,6 +199,18 @@ describe('app', () => {
               });
             });
         });
+        it('status 200 and object containing only seller_username queried items', () => {
+          const qb = { seller_username: 'Lois James' };
+          return request(app)
+            .get('/api/items')
+            .query(qb)
+            .expect(200)
+            .then(({ body: { items } }) => {
+              items.forEach((item) => {
+                expect(item.seller_username).toBe('Lois James');
+              });
+            });
+        });
         it('status 200 and object containing only second page', () => {
           const qb = { p: 2 };
           return request(app)
@@ -248,6 +260,16 @@ describe('app', () => {
             .expect(404)
             .then(({ body: { msg } }) => {
               expect(msg).toBe('Categorie Not Found');
+            });
+        });
+        it('status 404 when seller_username does not exist', () => {
+          const qb = { seller_username: 'Paul' };
+          return request(app)
+            .get('/api/items')
+            .query(qb)
+            .expect(404)
+            .then(({ body: { msg } }) => {
+              expect(msg).toBe('User Not Found');
             });
         });
         it('status 400 when page query is not valid', () => {
