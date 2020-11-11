@@ -1,6 +1,9 @@
 const { sendMail } = require("../models/mail");
 
 exports.postMail = async (req, res) => {
-  const {body: { email, name, type }} = req;
-  const response = await sendMail(email, name, type);
+  // console.log("controller", req);
+  const {body: { email, name, type, clientEmail }} = req;
+  sendMail(email, name, type, clientEmail, (result) => {
+        res.status(201).send({ result });
+  }); 
 }
