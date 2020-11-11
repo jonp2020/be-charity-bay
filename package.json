@@ -1,14 +1,15 @@
 {
   "name": "y",
   "version": "1.0.0",
-
   "main": "server.js",
   "jest": {
-    "setupFilesAfterEnv": ["jest-sorted"]
+    "setupFilesAfterEnv": [
+      "jest-sorted"
+    ]
   },
   "scripts": {
     "test": "jest __tests__/server.test.js --forceExit",
-    "start": "nodemon listen.js",
+    "start": "node listen.js",
     "setup-dbs": "psql -f ./db/setup.sql",
     "migrate-make": "knex migrate:make",
     "migrate-latest-dev": "knex migrate:latest",
