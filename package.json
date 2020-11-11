@@ -1,10 +1,11 @@
 {
   "name": "y",
   "version": "1.0.0",
-
   "main": "server.js",
   "jest": {
-    "setupFilesAfterEnv": ["jest-sorted"]
+    "setupFilesAfterEnv": [
+      "jest-sorted"
+    ]
   },
   "scripts": {
     "test": "jest __tests__/server.test.js --forceExit",
