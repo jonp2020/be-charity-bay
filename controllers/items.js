@@ -4,11 +4,20 @@ const {
   updateItemById,
   delItemById,
   insertItem,
-} = require('../models/items');
+} = require("../models/items");
 
 exports.getItems = async (req, res) => {
   const {
-    query: { status, buyer, seller_username, category, p, limit },
+    query: {
+      status,
+      buyer,
+      seller_username,
+      category,
+      p,
+      limit,
+      order,
+      sortBy,
+    },
   } = req;
   const { items, itemCount } = await selectItems(
     status,
@@ -16,7 +25,9 @@ exports.getItems = async (req, res) => {
     seller_username,
     category,
     p,
-    limit
+    limit,
+    order,
+    sortBy
   );
   res.send({ items, itemCount });
 };

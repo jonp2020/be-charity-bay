@@ -1,7 +1,11 @@
 {
   "name": "y",
   "version": "1.0.0",
+
   "main": "server.js",
+  "jest": {
+    "setupFilesAfterEnv": ["jest-sorted"]
+  },
   "scripts": {
     "test": "jest __tests__/server.test.js --forceExit",
     "start": "node listen.js",
@@ -41,6 +45,7 @@
   },
   "devDependencies": {
     "jest": "^26.6.3",
+    "jest-sorted": "^1.0.8",
     "supertest": "^6.0.0"
   }
 }
