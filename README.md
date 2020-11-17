@@ -40,3 +40,21 @@ $ npm start
 4. This will start the server listening locally on port 9090.
 
 5. Enjoy!
+
+## Running the Tests
+
+This app has been fully tested with Supertest and Jest. To run the tests, enter the following into the console
+
+```
+$ npm test
+```
+
+## Built Using
+
+- Express
+- Knex
+- Node Postgres
+- AWS SDK
+- Nodemailer
+- Multiparty
+- Nodemon
