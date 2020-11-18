@@ -6,7 +6,9 @@ const {
   send500Error,
   customErrorHandler,
   PSQLErrorHandler,
+  handle405Error,
 } = require('./errors');
+const listEndpoints = require('express-list-endpoints');
 
 const app = express();
 
@@ -17,6 +19,12 @@ app.get('/products/:id', function (req, res, next) {
   res.json({ msg: 'This is CORS-enabled for all origins!' });
 });
 
+app
+  .route('/api')
+  .get((req, res, next) => {
+    res.send({ endpoints: listEndpoints(app) });
+  })
+  .all(handle405Error);
 app.use('/api', apiRouter);
 app.use('/*', invalidEndpointHandler);
 
